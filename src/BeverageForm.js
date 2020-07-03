@@ -1,5 +1,6 @@
 import React from "react";
 import {v4} from "uuid";
+import PropTypes from "prop-types";
 
 function BeverageForm(props){
   return(
@@ -11,5 +12,10 @@ function BeverageForm(props){
     </React.Fragment>
   );
 }
+
+Beveragea.propTypes = {
+  
+}
+
 
 export default BeverageForm;

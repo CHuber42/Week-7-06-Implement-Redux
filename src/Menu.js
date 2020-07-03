@@ -1,5 +1,6 @@
 import React from "react";
 import Beverage from "./Beverage";
+import PropTypes from "prop-types";
 
 function Menu(){
   return(
@@ -9,5 +10,10 @@ function Menu(){
     </React.Fragment>
   );
 }
+
+Beveragea.propTypes = {
+  
+}
+
 
 export default Menu;
