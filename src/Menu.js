@@ -2,17 +2,17 @@ import React from "react";
 import Beverage from "./Beverage";
 import PropTypes from "prop-types";
 
-function Menu(){
+function Menu(props){
   return(
     <React.Fragment>
-      <Beverage/>
+      <Beverage decrementPint={props.decreaseAPint}/>
       <hr/>
     </React.Fragment>
   );
 }
 
-Beveragea.propTypes = {
-  
+Menu.propTypes = {
+  decreaseAPint: PropTypes.func
 }
 
 

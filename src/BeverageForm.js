@@ -13,7 +13,7 @@ function BeverageForm(props){
   );
 }
 
-Beveragea.propTypes = {
+BeverageForm.propTypes = {
   
 }
 

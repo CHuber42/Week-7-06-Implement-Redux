@@ -9,7 +9,7 @@ function Details(props){
   );
 }
 
-Beveragea.propTypes = {
+Details.propTypes = {
   
 }
 

@@ -44,7 +44,7 @@ class TapRoom extends React.Component
 
   }
 
-  decrementPints(id){
+  decrementPint(id){
 
   }
 
@@ -64,7 +64,7 @@ class TapRoom extends React.Component
     }
     else 
     {
-      activeFragment = <Menu masterMenu={this.state.currentMenu}/>
+      activeFragment = <Menu masterMenu={this.state.currentMenu} decreaseAPint={this.decrementPint}/>
       buttonText = "Add Beverage to Menu";
     }
     return (
