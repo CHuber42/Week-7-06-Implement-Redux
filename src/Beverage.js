@@ -5,14 +5,25 @@ import BeverageForm from "./BeverageForm";
 function Beverage(props){
   return(
     <React.Fragment>
-      <div><p>This is a Beverage.</p></div>
-      <button onClick={props.decreaseAPint}>Sold a Pint</button>
+      <div><p><b>Name</b>: {props.name}<br/>
+              <b>Brand</b>: {props.brand}<br/>
+              <b>Price</b>: {props.price}<br/>
+              <b>Alcohol Content</b>: {props.alcontent}<br/>
+              <b>Pints Remaining</b>: {props.pints}<br/>
+              </p></div>
+      <button onClick={() => props.decreaseAPint(props.id)}>Sold a Pint</button>
     </React.Fragment>
   );
 }
 
 Beverage.propTypes = {
-  decreaseAPint: PropTypes.func
+  decreaseAPint: PropTypes.func,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.string,
+  alcontent: PropTypes.string,
+  brand: PropTypes.string,
+  pints: PropTypes.number
 }
 
 export default Beverage;
