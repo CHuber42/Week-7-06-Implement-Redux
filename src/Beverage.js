@@ -11,13 +11,13 @@ function Beverage(props){
               <b>Alcohol Content</b>: {props.alcontent}<br/>
               <b>Pints Remaining</b>: {props.pints}<br/>
               </p></div>
-      <button onClick={() => props.decreaseAPint(props.id)}>Sold a Pint</button>
+      <button onClick={() => props.decrementPint(props.id)}>Sold a Pint</button>
     </React.Fragment>
   );
 }
 
 Beverage.propTypes = {
-  decreaseAPint: PropTypes.func,
+  decrementPint: PropTypes.func,
   id: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.string,

@@ -44,8 +44,24 @@ class TapRoom extends React.Component
 
   }
 
-  decrementPint(id){
-
+  decrementPint = (bevID) =>{
+    const targetBeverage = this.state.currentMenu.filter(beverage => beverage.id === bevID)[0];
+    const newBeverage = {
+      id: targetBeverage.id, 
+      name: targetBeverage.name,
+      price: targetBeverage.price, 
+      alcontent: targetBeverage.alcontent, 
+      brand: targetBeverage.brand, 
+      pints: (targetBeverage.pints - 1)
+    };
+    if(newBeverage.pints > 0){
+      const newMenu = this.state.currentMenu.filter(beverage => beverage.id !== bevID).concat(newBeverage);
+      this.setState({currentMenu: newMenu});
+    }
+    else{
+      const newMenu = this.state.currentMenu.filter(beverage => beverage.id !== bevID);
+      this.setState({currentMenu: newMenu});
+    }
   }
 
 
