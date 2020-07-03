@@ -27,8 +27,17 @@ class TapRoom extends React.Component
     }
   }
 
-  toggleView(){
-
+  toggleView = () => {
+    if(this.state.viewBeverageDetails)
+    {
+      this.setState({viewBeverageDetails: null, addingBeverage: false});
+    }
+    else if(this.state.addingBeverage){
+      this.setState({addingBeverage: false});
+    }
+    else{
+      this.setState({addingBeverage: true}); 
+    }
   }
 
   addBeverage(beverage){
@@ -42,23 +51,27 @@ class TapRoom extends React.Component
 
   render() {
     let activeFragment;
+    let buttonText;
     if (this.state.viewBeverageDetails !== null)
     {
       activeFragment = <Details/>
+      buttonText = "Back to Menu";
     }
     else if (this.state.addingBeverage)
     {
       activeFragment = <BeverageForm/>
+      buttonText = "Back to Menu";
     }
     else 
     {
-      activeFragment = <Menu/>
+      activeFragment = <Menu masterMenu={this.state.currentMenu}/>
+      buttonText = "Add Beverage to Menu";
     }
     return (
       <React.Fragment>
         <Header/>
         {activeFragment}
-        <button onClick={this.toggleView}>New Beverage</button>
+        <button onClick={this.toggleView}>{buttonText}</button>
       </React.Fragment>
   )};
 };
