@@ -13,7 +13,8 @@ function Menu(props){
         price={beverage.price}
         alcontent={beverage.alcontent}
         brand={beverage.brand}
-        pints={beverage.pints}/>
+        pints={beverage.pints}
+        bevDetails={props.viewDetails}/>
       )}
       <hr/>
     </React.Fragment>
@@ -22,7 +23,8 @@ function Menu(props){
 
 Menu.propTypes = {
   decreaseAPint: PropTypes.func,
-  masterMenu: PropTypes.array
+  masterMenu: PropTypes.array,
+  viewDetails: PropTypes.func
 }
 
 

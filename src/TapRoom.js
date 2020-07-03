@@ -40,8 +40,12 @@ class TapRoom extends React.Component
     }
   }
 
-  addBeverage(beverage){
+  addBeverage = (beverage) => {
 
+  }
+
+  toggleDetails = (bevID) => {
+    this.setState({viewBeverageDetails: bevID, addingBeverage: false});
   }
 
   decrementPint = (bevID) =>{
@@ -64,13 +68,13 @@ class TapRoom extends React.Component
     }
   }
 
-
   render() {
     let activeFragment;
     let buttonText;
     if (this.state.viewBeverageDetails !== null)
     {
-      activeFragment = <Details/>
+      const activeBeverage = this.state.currentMenu.filter(beverage => beverage.id === this.state.viewBeverageDetails)[0];
+      activeFragment = <Details beverage={activeBeverage}/>
       buttonText = "Back to Menu";
     }
     else if (this.state.addingBeverage)
@@ -80,7 +84,7 @@ class TapRoom extends React.Component
     }
     else 
     {
-      activeFragment = <Menu masterMenu={this.state.currentMenu} decreaseAPint={this.decrementPint}/>
+      activeFragment = <Menu masterMenu={this.state.currentMenu} decreaseAPint={this.decrementPint} viewDetails={this.toggleDetails}/>
       buttonText = "Add Beverage to Menu";
     }
     return (

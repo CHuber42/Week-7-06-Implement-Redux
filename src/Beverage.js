@@ -5,7 +5,7 @@ import BeverageForm from "./BeverageForm";
 function Beverage(props){
   return(
     <React.Fragment>
-      <div><p><b>Name</b>: {props.name}<br/>
+      <div onClick={() => props.bevDetails(props.id)}><p><b>Name</b>: {props.name}<br/>
               <b>Brand</b>: {props.brand}<br/>
               <b>Price</b>: {props.price}<br/>
               <b>Alcohol Content</b>: {props.alcontent}<br/>
@@ -23,7 +23,8 @@ Beverage.propTypes = {
   price: PropTypes.string,
   alcontent: PropTypes.string,
   brand: PropTypes.string,
-  pints: PropTypes.number
+  pints: PropTypes.number,
+  bevDetails: PropTypes.func
 }
 
 export default Beverage;
