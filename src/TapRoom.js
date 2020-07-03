@@ -3,6 +3,7 @@ import Header from "./Header";
 import Menu from "./Menu";
 import BeverageForm from "./BeverageForm";
 import {v4} from "uuid"; 
+import Details from "./Details";
 
 let DefaultMenu = [
   {
@@ -21,7 +22,8 @@ class TapRoom extends React.Component
     super();
     this.state = {
       currentMenu: DefaultMenu,
-      addingBeverage: false
+      addingBeverage: false,
+      viewBeverageDetails: null,
     }
   }
 
@@ -39,11 +41,23 @@ class TapRoom extends React.Component
 
 
   render() {
+    let activeFragment;
+    if (this.state.viewBeverageDetails !== null)
+    {
+      activeFragment = <Details/>
+    }
+    else if (this.state.addingBeverage)
+    {
+      activeFragment = <BeverageForm/>
+    }
+    else 
+    {
+      activeFragment = <Menu/>
+    }
     return (
       <React.Fragment>
         <Header/>
-        <Menu/>
-        <BeverageForm/>
+        {activeFragment}
         <button onClick={this.toggleView}>New Beverage</button>
       </React.Fragment>
   )};
