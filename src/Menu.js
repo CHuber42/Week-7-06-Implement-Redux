@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function Menu(props){
   return(
     <React.Fragment>
-      {props.masterMenu.map((beverage, id) => 
+      {props.masterMenu.map((beverage) => 
         <Beverage 
         decrementPint={props.decreaseAPint}
         id={beverage.id}
@@ -14,7 +14,8 @@ function Menu(props){
         alcontent={beverage.alcontent}
         brand={beverage.brand}
         pints={beverage.pints}
-        bevDetails={props.viewDetails}/>
+        bevDetails={props.viewDetails}
+        key={beverage.key}/>
       )}
     </React.Fragment>
   );

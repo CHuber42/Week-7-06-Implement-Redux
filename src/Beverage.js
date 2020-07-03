@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BeverageForm from "./BeverageForm";
 
 function Beverage(props){
   return(

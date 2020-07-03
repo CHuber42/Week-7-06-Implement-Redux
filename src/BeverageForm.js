@@ -11,8 +11,9 @@ function BeverageForm(props){
       brand: event.target.brand.value,
       price: event.target.price.value,
       alcontent: event.target.alcontent.value,
-      pints: event.target.pints.value,
-      id: v4() })
+      pints: parseInt(event.target.pints.value),
+      id: v4(),
+      key: props.bevKey })
   }
 
   return(
@@ -35,7 +36,7 @@ function BeverageForm(props){
           name="alcontent"
           placeholder="Alcohol Content"/><br/>
         <input
-          type="text"
+          type="number"
           name="pints"
           placeholder="Pints in Keg"/><br/>
         <button type="submit">Add Beverage</button>
@@ -46,7 +47,8 @@ function BeverageForm(props){
 }
 
 BeverageForm.propTypes = {
-  formSubmit: PropTypes.func  
+  formSubmit: PropTypes.func,
+  bevKey: PropTypes.number  
 }
 
 

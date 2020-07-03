@@ -9,10 +9,11 @@ let DefaultMenu = [
   {
   name: "Root Beer",
   brand: "Washington Valley",
-  alcontent: 0,
-  price: "$4.99",
+  alcontent: "0",
+  price: "4.99",
   pints: 124,
-  id: v4()
+  id: v4(),
+  key: 0
   }
 ]
 
@@ -41,7 +42,7 @@ class TapRoom extends React.Component
   }
 
   addBeverage = (beverage) => {
-    const newMenu = this.state.currentMenu.concat(beverage).sort();
+    const newMenu = this.state.currentMenu.concat(beverage);
     this.setState({currentMenu: newMenu, addingBeverage: false});
   }
 
@@ -57,11 +58,14 @@ class TapRoom extends React.Component
       price: targetBeverage.price, 
       alcontent: targetBeverage.alcontent, 
       brand: targetBeverage.brand, 
-      pints: (targetBeverage.pints - 1)
+      pints: (targetBeverage.pints - 1),
+      key: targetBeverage.key
     };
     if(newBeverage.pints > 0){
       const newMenu = this.state.currentMenu.filter(beverage => beverage.id !== bevID).concat(newBeverage);
-      this.setState({currentMenu: newMenu});
+      this.setState({currentMenu: newMenu.sort(function(a, b){
+        return a.key - b.key;
+      })});
     }
     else{
       const newMenu = this.state.currentMenu.filter(beverage => beverage.id !== bevID);
@@ -80,7 +84,7 @@ class TapRoom extends React.Component
     }
     else if (this.state.addingBeverage)
     {
-      activeFragment = <BeverageForm formSubmit={this.addBeverage}/>
+      activeFragment = <BeverageForm formSubmit={this.addBeverage} bevKey={this.state.currentMenu.length}/>
       buttonText = "Back to Menu";
     }
     else 
