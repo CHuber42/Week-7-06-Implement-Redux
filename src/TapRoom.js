@@ -41,7 +41,8 @@ class TapRoom extends React.Component
   }
 
   addBeverage = (beverage) => {
-
+    const newMenu = this.state.currentMenu.concat(beverage);
+    this.setState({currentMenu: newMenu, addingBeverage: false});
   }
 
   toggleDetails = (bevID) => {
@@ -79,7 +80,7 @@ class TapRoom extends React.Component
     }
     else if (this.state.addingBeverage)
     {
-      activeFragment = <BeverageForm/>
+      activeFragment = <BeverageForm addABeverage={this.addBeverage}/>
       buttonText = "Back to Menu";
     }
     else 

@@ -14,7 +14,7 @@ function BeverageForm(props){
 }
 
 BeverageForm.propTypes = {
-  
+  addABeverage: PropTypes.func  
 }
 
 
