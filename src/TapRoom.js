@@ -41,7 +41,7 @@ class TapRoom extends React.Component
   }
 
   addBeverage = (beverage) => {
-    const newMenu = this.state.currentMenu.concat(beverage);
+    const newMenu = this.state.currentMenu.concat(beverage).sort();
     this.setState({currentMenu: newMenu, addingBeverage: false});
   }
 
@@ -80,7 +80,7 @@ class TapRoom extends React.Component
     }
     else if (this.state.addingBeverage)
     {
-      activeFragment = <BeverageForm addABeverage={this.addBeverage}/>
+      activeFragment = <BeverageForm formSubmit={this.addBeverage}/>
       buttonText = "Back to Menu";
     }
     else 

@@ -16,7 +16,6 @@ function Menu(props){
         pints={beverage.pints}
         bevDetails={props.viewDetails}/>
       )}
-      <hr/>
     </React.Fragment>
   );
 }
