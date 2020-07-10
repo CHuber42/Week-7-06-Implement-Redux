@@ -49,7 +49,8 @@ A) CurrentMenu: master list of all kegs in the taphouse. Object/Dictionary.
 B) addingBeverage: If the form is visible. Boolean.  
 C) viewBeverageDetails: If beverage details page is visible and if so, the id of it (v4/string).
 
-2. Declare reducers, bundle into a root reducer.
+2. Declare reducers, bundle into a root reducer. (DONE)  
+A) Declare const actiontypes folder; tests won't work otherwise.
 
 ##### _Contact_:
 
