@@ -59,7 +59,7 @@ B) TapRoom.js (DONE)
 C) Menu.js (DONE)  
 D) Beverage.js (DONE)  
 E) Details.js (DONE)  
-F) BeverageForm.js
+F) BeverageForm.js (DONE)  
 
 ##### _Contact_:
 

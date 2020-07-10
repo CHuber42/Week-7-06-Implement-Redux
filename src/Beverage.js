@@ -23,7 +23,13 @@ function Beverage(props){
 function decrementPint(props){
   const {dispatch} = props;
   const newBeverage = {id: props.id, name: props.name, brand: props.brand, price: props.price, alcontent: props.alcontent, pints: (props.pints-1), key: props.key};
-  dispatch(actions.addBeverage(newBeverage));
+  if (newBeverage.pints > 0){
+    dispatch(actions.addBeverage(newBeverage));
+  }
+  else
+  {
+    dispatch(actions.deleteBeverage(props.id));
+  }
 }
 
 Beverage.propTypes = {
