@@ -4,10 +4,10 @@ import {connect} from 'react-redux';
 import * as actions from './actions/';
 
 function Beverage(props){
-  console.log(props);
+  const {dispatch} = props;
   return(
     <React.Fragment>
-      <div>
+      <div onClick={() => dispatch(actions.toggleDetailsOn(props.id))}>
         <p><b>Name</b>: {props.name}<br/>
         <b>Brand</b>: {props.brand}<br/>
         <b>Price</b>: {props.price}<br/>

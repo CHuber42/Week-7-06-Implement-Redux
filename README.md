@@ -58,8 +58,8 @@ A) App/Index (add provider wrapper and import rootreducer) (DONE)
 B) TapRoom.js (DONE)  
 C) Menu.js (DONE)  
 D) Beverage.js (DONE)  
-E) BeverageForm.js
-F) Details.js
+E) Details.js (DONE)  
+F) BeverageForm.js
 
 ##### _Contact_:
 

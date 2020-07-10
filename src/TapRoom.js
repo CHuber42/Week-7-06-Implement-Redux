@@ -30,9 +30,13 @@ class TapRoom extends React.Component
   
   toggleForm(props){
     const {dispatch} = props;
-    console.log(props);
-    // console.log(dispatch);
-    dispatch(actions.toggleForm());
+    if(props.viewBeverageDetails){
+      dispatch(actions.toggleDetailsOff());
+    }
+    else
+    {
+      dispatch(actions.toggleForm());
+    }
   };
   
   render() {
