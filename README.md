@@ -2,7 +2,7 @@
 #### Author: **Christopher Huber**
 ## Goal: Refactor previous project to utilize Redux-managed global states
 
-### Github page: https://github.com/CHuber42/Week-6-29-Code-Review
+### Github page: https://github.com/CHuber42/Week-7-06-Implement-Redux
 #### Github repo: You're standing on it.
 ##### Copyright Christopher Huber, 2020
 
