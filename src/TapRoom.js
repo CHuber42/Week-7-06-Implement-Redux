@@ -49,7 +49,7 @@ class TapRoom extends React.Component
     }
     else 
     {
-      activeFragment = <Menu />
+      activeFragment = <Menu currentMenu={this.props.currentMenu}/>
       buttonText = "Add Beverage to Menu";
     }
     return (
