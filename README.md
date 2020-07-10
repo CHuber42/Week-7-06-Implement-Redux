@@ -51,7 +51,15 @@ C) viewBeverageDetails: If beverage details page is visible and if so, the id of
 
 2. Declare reducers, bundle into a root reducer. (DONE)  
 A) Declare const actiontypes folder; tests won't work otherwise. (DONE)  
-B) Write Tests for reducers.  
+B) Write Tests for reducers.  (DONE)  
+
+3. Refactor from the top->down:
+A) App/Index (add provider wrapper and import rootreducer)
+B) TapRoom.js
+C) BeverageForm.js
+D) Details.js
+E) Menu.js
+F) Beverage.js
 
 ##### _Contact_:
 

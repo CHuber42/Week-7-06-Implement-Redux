@@ -6,13 +6,13 @@ export default (state = {}, action) => {
     case actions.ADD_BEVERAGE :
       return {...state,
         [id]: {
-          name: action.name,
-          brand: action.brand,
-          alcontent: action.alcontent,
-          price: action.price,
-          pints: action.pints,
-          id: action.id,
-          key: action.key
+          name: name,
+          brand: brand,
+          alcontent: alcontent,
+          price: price,
+          pints: pints,
+          id: id,
+          key: key
         }};
     case actions.DELETE_BEVERAGE :
       const newState = { ...state };
