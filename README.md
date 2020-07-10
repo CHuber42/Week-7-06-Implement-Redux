@@ -1,6 +1,6 @@
-## Project: **Week 15 - Friday Code Review - TapRoom Keg Tracker**
+## Project: **Week 16 - Friday Code Review - TapRoom Redux**
 #### Author: **Christopher Huber**
-## Goal: Demonstrate single-page, fully-CRUD "website" in React!
+## Goal: Refactor previous project to utilize Redux-managed global states
 
 ### Github page: https://github.com/CHuber42/Week-6-29-Code-Review
 #### Github repo: You're standing on it.
@@ -47,13 +47,13 @@ Action creators and constants should be used.
 1. Document states that need to be handled by reducers:  
 A) CurrentMenu: master list of all kegs in the taphouse. Object/Dictionary.  
 B) addingBeverage: If the form is visible. Boolean.  
-C) viewBeverageDetails: If beverage details page is visible and if so, the id of it (v4/string).
+C) viewBeverageDetails: If beverage details page is visible and if so, the id of it (v4/string = true || null = false).  
 
 2. Declare reducers, bundle into a root reducer. (DONE)  
 A) Declare const actiontypes folder; tests won't work otherwise. (DONE)  
 B) Write Tests for reducers.  (DONE)  
 
-3. Refactor from the top->down:
+3. Refactor from the top->down:  
 A) App/Index (add provider wrapper and import rootreducer) (DONE)  
 B) TapRoom.js (DONE)  
 C) Menu.js (DONE)  
