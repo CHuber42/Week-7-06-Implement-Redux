@@ -72,5 +72,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### Diagram for app/data flow:
 
  
+ ![Dataflow Diagram](/taproom-diagram.jpg)
 
 
