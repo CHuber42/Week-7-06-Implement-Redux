@@ -1,3 +1,64 @@
+## Project: **Week 15 - Friday Code Review - TapRoom Keg Tracker**
+#### Author: **Christopher Huber**
+## Goal: Demonstrate single-page, fully-CRUD "website" in React!
+
+### Github page: https://github.com/CHuber42/Week-6-29-Code-Review
+#### Github repo: You're standing on it.
+##### Copyright Christopher Huber, 2020
+
+<hr/>
+         
+##### Build instructions/Installation: 
+
+This project is built following the instructions at the bottom of the page.
+
+To install, simply clone (or download) this folder into a new directory, git bash to the root folder,
+and run npm install.  
+
+To run: Navigate to the root folder in a terminal and enter "npm start". The project will be hosted at   
+http://localhost:3000
+
+##### Development Requirements
+
+MVP:  As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store).
+As a user, I want to submit a form to add a new keg to a list.
+As a user, I want to be able to click on a keg to see its detail page.
+As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints.
+As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
+
+##### Extra Features/bugs:  
+1. By default, when a keg is decremented, it is re-appended to the list of kegs which moves it to the end. This causes havoc with the display.  
+To remedy this, the keg list now gets sorted based on a key assigned at Keg Object Creation; for some reason v4() doesn't work for this   
+as sorting by string is a bit funky, so I used a placeholder - length of keg array - as a "key". This can cause problems when a keg is removed from the list  
+(empty) and then another is added - a duplicate "key" is likely.
+
+<hr/>
+
+##### Segment 2: Redux Implementation
+
+Here are the requirements for the refactor:
+
+All state in your application should be handled by Redux (even if React can handle it locally).
+All reducers should be tested thoroughly, and all tests must be passing.
+Action creators and constants should be used.
+
+##### Development Schedule
+
+1. Document states that need to be handled by reducers:  
+A) CurrentMenu: master list of all kegs in the taphouse. Object/Dictionary.  
+B) addingBeverage: If the form is visible. Boolean.  
+C) viewBeverageDetails: If beverage details page is visible and if so, the id of it (v4/string).
+
+2. Declare reducers, bundle into a root reducer.
+
+##### _Contact_:
+
+CHuber42.Gmail.com
+
+##### _Copyright Christopher Huber 2020, all rights reserved._
+
+<hr/>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
