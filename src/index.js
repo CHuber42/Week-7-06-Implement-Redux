@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import TapRoom from './TapRoom';
 import * as serviceWorker from './serviceWorker';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import rootReducer from "./reducers/index";
+
+
+const store = createStore(rootReducer);
+
+store.subscribe(() => 
+  console.log(store.getState())
+);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store = {store}>
     <TapRoom />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

@@ -54,7 +54,7 @@ A) Declare const actiontypes folder; tests won't work otherwise. (DONE)
 B) Write Tests for reducers.  (DONE)  
 
 3. Refactor from the top->down:
-A) App/Index (add provider wrapper and import rootreducer)
+A) App/Index (add provider wrapper and import rootreducer) (DONE)  
 B) TapRoom.js
 C) BeverageForm.js
 D) Details.js

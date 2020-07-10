@@ -4,8 +4,11 @@ import Menu from "./Menu";
 import BeverageForm from "./BeverageForm";
 import {v4} from "uuid"; 
 import Details from "./Details";
+import PropTypes from "prop-types";
+import {connect} from 'react-redux';
+import * as actions from './actions/index'
 
-let DefaultMenu = [
+let DefaultItem = 
   {
   name: "Root Beer",
   brand: "Washington Valley",
@@ -15,39 +18,12 @@ let DefaultMenu = [
   id: v4(),
   key: 0
   }
-]
+
 
 class TapRoom extends React.Component 
 {
-  constructor(){
+  constructor(props){
     super();
-    this.state = {
-      currentMenu: DefaultMenu,
-      addingBeverage: false,
-      viewBeverageDetails: null,
-    }
-  }
-
-  toggleView = () => {
-    if(this.state.viewBeverageDetails)
-    {
-      this.setState({viewBeverageDetails: null, addingBeverage: false});
-    }
-    else if(this.state.addingBeverage){
-      this.setState({addingBeverage: false});
-    }
-    else{
-      this.setState({addingBeverage: true}); 
-    }
-  }
-
-  addBeverage = (beverage) => {
-    const newMenu = this.state.currentMenu.concat(beverage);
-    this.setState({currentMenu: newMenu, addingBeverage: false});
-  }
-
-  toggleDetails = (bevID) => {
-    this.setState({viewBeverageDetails: bevID, addingBeverage: false});
   }
 
   decrementPint = (bevID) =>{
@@ -73,32 +49,52 @@ class TapRoom extends React.Component
     }
   }
 
-  render() {
+  toggleForm(props){
+    const {dispatch} = props;
+    dispatch(actions.toggleForm());
+  };
+
+  render(props) {
     let activeFragment;
     let buttonText;
-    if (this.state.viewBeverageDetails !== null)
+    if (this.props.viewBeverageDetails !== null)
     {
-      const activeBeverage = this.state.currentMenu.filter(beverage => beverage.id === this.state.viewBeverageDetails)[0];
-      activeFragment = <Details beverage={activeBeverage}/>
+      activeFragment = <Details />
       buttonText = "Back to Menu";
     }
-    else if (this.state.addingBeverage)
+    else if (this.props.formVisible)
     {
-      activeFragment = <BeverageForm formSubmit={this.addBeverage} bevKey={this.state.currentMenu.length}/>
+      activeFragment = <BeverageForm />
       buttonText = "Back to Menu";
     }
     else 
     {
-      activeFragment = <Menu masterMenu={this.state.currentMenu} decreaseAPint={this.decrementPint} viewDetails={this.toggleDetails}/>
+      activeFragment = <Menu />
       buttonText = "Add Beverage to Menu";
     }
     return (
       <React.Fragment>
         <Header/>
         {activeFragment}
-        <button onClick={this.toggleView}>{buttonText}</button>
+        <button onClick={() => this.toggleForm(props)}>{buttonText}</button>
       </React.Fragment>
   )};
 };
+
+TapRoom.propTypes = {
+  currentMenu: PropTypes.object,
+  formVisible: PropTypes.bool,
+  viewBeverageDetails: PropTypes.string
+}
+
+const mapStateToProps = state => {
+  return {
+    currentMenu: state.currentMenu,
+    formVisible: state.toggleForm,
+    viewBeverageDetails: state.viewBeverageDetails
+  }
+}
+
+TapRoom = connect(mapStateToProps)(TapRoom);
 
 export default TapRoom;
