@@ -15,8 +15,7 @@ let DefaultItem =
   alcontent: "0",
   price: "4.99",
   pints: 124,
-  id: v4(),
-  key: 0
+  id: v4()
   }
 
 
@@ -31,10 +30,12 @@ class TapRoom extends React.Component
   
   toggleForm(props){
     const {dispatch} = props;
+    console.log(props);
+    // console.log(dispatch);
     dispatch(actions.toggleForm());
   };
   
-  render(props) {
+  render() {
     let activeFragment;
     let buttonText;
     if (this.props.viewBeverageDetails !== null)
@@ -49,14 +50,14 @@ class TapRoom extends React.Component
     }
     else 
     {
-      activeFragment = <Menu currentMenu={this.props.currentMenu}/>
+      activeFragment = <Menu />
       buttonText = "Add Beverage to Menu";
     }
     return (
       <React.Fragment>
         <Header/>
         {activeFragment}
-        <button onClick={() => this.toggleForm(props)}>{buttonText}</button>
+        <button onClick={() => this.toggleForm(this.props)}>{buttonText}</button>
       </React.Fragment>
   )};
 };

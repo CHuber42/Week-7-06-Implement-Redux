@@ -57,9 +57,9 @@ B) Write Tests for reducers.  (DONE)
 A) App/Index (add provider wrapper and import rootreducer) (DONE)  
 B) TapRoom.js (DONE)  
 C) Menu.js (DONE)  
-D) Details.js
+D) Beverage.js (DONE)  
 E) BeverageForm.js
-F) Beverage.js
+F) Details.js
 
 ##### _Contact_:
 

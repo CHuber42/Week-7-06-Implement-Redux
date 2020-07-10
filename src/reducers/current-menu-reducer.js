@@ -1,7 +1,7 @@
 import * as actions from "../actions/ActionTypes";
 
 export default (state = {}, action) => {
-  const { name, brand, alcontent, price, pints, id, key } = action;
+  const { name, brand, alcontent, price, pints, id } = action;
   switch (action.type) {
     case actions.ADD_BEVERAGE :
       return {...state,
@@ -11,8 +11,7 @@ export default (state = {}, action) => {
           alcontent: alcontent,
           price: price,
           pints: pints,
-          id: id,
-          key: key
+          id: id
         }};
     case actions.DELETE_BEVERAGE :
       const newState = { ...state };
