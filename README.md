@@ -55,7 +55,7 @@ B) Write Tests for reducers.  (DONE)
 
 3. Refactor from the top->down:
 A) App/Index (add provider wrapper and import rootreducer) (DONE)  
-B) TapRoom.js
+B) TapRoom.js (DONE)  
 C) BeverageForm.js
 D) Details.js
 E) Menu.js

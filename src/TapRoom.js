@@ -24,36 +24,16 @@ class TapRoom extends React.Component
 {
   constructor(props){
     super();
+    const {dispatch} = props;
+    dispatch(actions.addBeverage(DefaultItem));
   }
 
-  decrementPint = (bevID) =>{
-    const targetBeverage = this.state.currentMenu.filter(beverage => beverage.id === bevID)[0];
-    const newBeverage = {
-      id: targetBeverage.id, 
-      name: targetBeverage.name,
-      price: targetBeverage.price, 
-      alcontent: targetBeverage.alcontent, 
-      brand: targetBeverage.brand, 
-      pints: (targetBeverage.pints - 1),
-      key: targetBeverage.key
-    };
-    if(newBeverage.pints > 0){
-      const newMenu = this.state.currentMenu.filter(beverage => beverage.id !== bevID).concat(newBeverage);
-      this.setState({currentMenu: newMenu.sort(function(a, b){
-        return a.key - b.key;
-      })});
-    }
-    else{
-      const newMenu = this.state.currentMenu.filter(beverage => beverage.id !== bevID);
-      this.setState({currentMenu: newMenu});
-    }
-  }
-
+  
   toggleForm(props){
     const {dispatch} = props;
     dispatch(actions.toggleForm());
   };
-
+  
   render(props) {
     let activeFragment;
     let buttonText;
@@ -98,3 +78,26 @@ const mapStateToProps = state => {
 TapRoom = connect(mapStateToProps)(TapRoom);
 
 export default TapRoom;
+
+// decrementPint = (bevID) =>{
+//   const targetBeverage = this.state.currentMenu.filter(beverage => beverage.id === bevID)[0];
+//   const newBeverage = {
+//     id: targetBeverage.id, 
+//     name: targetBeverage.name,
+//     price: targetBeverage.price, 
+//     alcontent: targetBeverage.alcontent, 
+//     brand: targetBeverage.brand, 
+//     pints: (targetBeverage.pints - 1),
+//     key: targetBeverage.key
+//   };
+//   if(newBeverage.pints > 0){
+//     const newMenu = this.state.currentMenu.filter(beverage => beverage.id !== bevID).concat(newBeverage);
+//     this.setState({currentMenu: newMenu.sort(function(a, b){
+//       return a.key - b.key;
+//     })});
+//   }
+//   else{
+//     const newMenu = this.state.currentMenu.filter(beverage => beverage.id !== bevID);
+//     this.setState({currentMenu: newMenu});
+//   }
+// }

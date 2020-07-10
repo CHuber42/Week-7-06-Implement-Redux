@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function Menu(props){
   return(
     <React.Fragment>
-      {props.masterMenu.map((beverage) => 
+      {/* {props.masterMenu.map((beverage) => 
         <Beverage 
         decrementPint={props.decreaseAPint}
         id={beverage.id}
@@ -16,15 +16,13 @@ function Menu(props){
         pints={beverage.pints}
         bevDetails={props.viewDetails}
         key={beverage.key}/>
-      )}
+      )} */}
     </React.Fragment>
   );
 }
 
 Menu.propTypes = {
-  decreaseAPint: PropTypes.func,
-  masterMenu: PropTypes.array,
-  viewDetails: PropTypes.func
+  
 }
 
 
