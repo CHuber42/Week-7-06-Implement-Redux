@@ -50,7 +50,8 @@ B) addingBeverage: If the form is visible. Boolean.
 C) viewBeverageDetails: If beverage details page is visible and if so, the id of it (v4/string).
 
 2. Declare reducers, bundle into a root reducer. (DONE)  
-A) Declare const actiontypes folder; tests won't work otherwise.
+A) Declare const actiontypes folder; tests won't work otherwise. (DONE)  
+B) Write Tests for reducers.  
 
 ##### _Contact_:
 

@@ -1,5 +1,5 @@
 import * as actions from "../actions/ActionTypes";
 
-export default toggleForm = (state = false) => {
+export default (state = false) => {
   return !state;
 }

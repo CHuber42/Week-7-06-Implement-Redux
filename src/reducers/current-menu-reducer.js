@@ -1,6 +1,6 @@
 import * as actions from "../actions/ActionTypes";
 
-export default currentMenu = (state = {}, action) => {
+export default (state = {}, action) => {
   const { name, brand, alcontent, price, pints, id, key } = action;
   switch (action.type) {
     case actions.ADD_BEVERAGE :
